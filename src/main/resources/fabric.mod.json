@@ -1,0 +1,26 @@
+{
+    "schemaVersion": 1,
+    "id": "civchesttracker",
+    "version": "${mod_version}",
+    "name": "${mod_name}",
+    "description": "${mod_description}",
+    "authors": [
+        "Protonull"
+    ],
+    "contact": {
+        "homepage": "${mod_home_url}",
+        "sources": "${mod_source_url}"
+    },
+    "license": "${copyright_licence}",
+    "icon": "assets/civchesttracker/icon.png",
+    "environment": "client",
+    "entrypoints": {},
+    "depends": {
+        "minecraft": "${minecraft_version}",
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric": "*"
+    },
+    "mixins": [
+        "civchesttracker.mixins.json"
+    ]
+}
