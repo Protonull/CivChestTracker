@@ -1,0 +1,39 @@
+name: "CivChestTracker Unstable Gradle CI"
+
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "src/**/*"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v3"
+
+      - name: "Set up JDK 21"
+        uses: "actions/setup-java@v3"
+        with:
+          java-version: 21
+          distribution: "corretto"
+          cache: "gradle"
+
+      - name: "Compiling CivChestTracker"
+        run: "./gradlew build"
+
+      - name: "Publishing CivChestTracker"
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Nightly (Unstable)"
+          files: |
+            LICENCE
+            dist/*.jar
