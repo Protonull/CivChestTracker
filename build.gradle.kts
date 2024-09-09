@@ -25,6 +25,11 @@ dependencies {
 
     modImplementation("net.fabricmc:fabric-loader:${project.extra["fabric_loader_version"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.extra["fabric_api_version"]}")
+
+    "red.jackf:chesttracker:2.5.1+1.21.1".also {
+        include(it)
+        modImplementation(it)
+    }
 }
 
 repositories {
@@ -35,6 +40,24 @@ repositories {
         name = "Modrinth"
         content {
             includeGroup("maven.modrinth")
+        }
+    }
+    // For ChestTracker
+    maven(url = "https://maven.jackf.red/releases/") {
+        name = "JackFredMaven"
+        content {
+            @Suppress("UnstableApiUsage")
+            includeGroupAndSubgroups("red.jackf")
+        }
+    }
+    // For YACL
+    maven(url = "https://maven.isxander.dev/releases/") {
+        name = "Xander Maven"
+        content {
+            @Suppress("UnstableApiUsage")
+            includeGroupAndSubgroups("dev.isxander")
+            @Suppress("UnstableApiUsage")
+            includeGroupAndSubgroups("org.quiltmc")
         }
     }
 }
