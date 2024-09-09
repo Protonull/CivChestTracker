@@ -5,7 +5,10 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-
+        "illegal.AlwaysReturnNoBlockSourceMixin",
+        "illegal.DoNotRegisterBlockBreakListenerMixin",
+        "illegal.DoNotRegisterBlockPlaceListenerMixin",
+        "illegal.DoNotRegisterUseBlockListenerMixin"
     ],
     "injectors": {
         "defaultRequire": 1
