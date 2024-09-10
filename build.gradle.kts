@@ -30,6 +30,9 @@ dependencies {
         include(it)
         modImplementation(it)
     }
+
+    // https://modrinth.com/mod/modmenu/version/11.0.2
+    modLocalRuntime("maven.modrinth:modmenu:3ib3Uvvv")
 }
 
 repositories {
