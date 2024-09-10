@@ -40,6 +40,10 @@ dependencies {
 
     // https://modrinth.com/mod/modmenu/version/11.0.2
     modLocalRuntime("maven.modrinth:modmenu:3ib3Uvvv")
+
+    // This is literally only here to make Minecraft SHUT UP about non-signed messages while testing.
+    // https://modrinth.com/mod/no-chat-reports/version/Fabric-1.21-v2.8.0
+    modLocalRuntime("maven.modrinth:no-chat-reports:riMhCAII")
 }
 
 repositories {
