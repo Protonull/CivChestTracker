@@ -10,7 +10,8 @@
         "illegal.DoNotRegisterBlockPlaceListenerMixin",
         "illegal.DoNotRegisterUseBlockListenerMixin",
 
-        "AlwaysShowContextButtons"
+        "AlwaysShowContextButtons",
+        "HandleScreenOpenMixin"
     ],
     "injectors": {
         "defaultRequire": 1
