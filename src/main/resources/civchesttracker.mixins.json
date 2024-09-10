@@ -8,7 +8,9 @@
         "illegal.AlwaysReturnNoBlockSourceMixin",
         "illegal.DoNotRegisterBlockBreakListenerMixin",
         "illegal.DoNotRegisterBlockPlaceListenerMixin",
-        "illegal.DoNotRegisterUseBlockListenerMixin"
+        "illegal.DoNotRegisterUseBlockListenerMixin",
+
+        "AlwaysShowContextButtons"
     ],
     "injectors": {
         "defaultRequire": 1
