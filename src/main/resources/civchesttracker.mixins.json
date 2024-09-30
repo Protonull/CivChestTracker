@@ -5,12 +5,15 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-        "illegal.AlwaysReturnNoBlockSourceMixin",
+        "illegal.DoNotListenForBlockBreaksMixin",
         "illegal.DoNotRegisterBlockBreakListenerMixin",
         "illegal.DoNotRegisterBlockPlaceListenerMixin",
         "illegal.DoNotRegisterUseBlockListenerMixin",
 
-        "AlwaysShowContextButtons"
+        "InventoryContextButtonsMixin",
+        "MemoryAccessor",
+        "MemoryMixin",
+        "SetBlockPositionBasedOnMemoryMixin"
     ],
     "injectors": {
         "defaultRequire": 1
