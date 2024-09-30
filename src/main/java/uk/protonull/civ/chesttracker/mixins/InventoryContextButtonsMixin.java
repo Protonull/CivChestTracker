@@ -92,10 +92,7 @@ public abstract class InventoryContextButtonsMixin {
             return;
         }
         // TODO: Lol
-        final LocalPlayer player = Minecraft.getInstance().player;
-        if (player == null) {
-            return;
-        }
+        final LocalPlayer player = Shortcuts.getPlayerFromInventoryWindow(parent);
         final ResourceLocation dimensionKey = player.clientLevel.dimension().location();
         final MemoryKeyImpl dimensionStorage = Shortcuts.getStorageForDimension(serverStorage, dimensionKey);
         if (dimensionStorage == null) {
@@ -105,8 +102,7 @@ public abstract class InventoryContextButtonsMixin {
         this.secondaryButtons.add(new TrackContainerButton(() -> {
             Minecraft.getInstance().setScreen(new ContainerLocationDeciderScreen(
                 parent,
-                (blockPos) -> setRestoreLocation(parent, MemoryLocation.inWorld(dimensionKey, blockPos)),
-                player
+                (blockPos) -> setRestoreLocation(parent, MemoryLocation.inWorld(dimensionKey, blockPos))
             ));
         }));
     }

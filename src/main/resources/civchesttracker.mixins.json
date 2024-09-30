@@ -13,6 +13,8 @@
         "illegal.NukeConnectedBlocksGrabberMixin",
         "illegal.NukeInteractionTrackerImplMixin",
 
+        "retention.RetainPlayerOnInventoryWindowMixin",
+
         "InventoryContextButtonsMixin",
         "MemoryAccessor",
         "MemoryMixin",

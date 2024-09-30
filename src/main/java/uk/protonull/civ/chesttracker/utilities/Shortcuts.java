@@ -2,6 +2,8 @@ package uk.protonull.civ.chesttracker.utilities;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
@@ -11,6 +13,7 @@ import red.jackf.chesttracker.api.memory.Memory;
 import red.jackf.chesttracker.impl.memory.MemoryBankAccessImpl;
 import red.jackf.chesttracker.impl.memory.MemoryBankImpl;
 import red.jackf.chesttracker.impl.memory.MemoryKeyImpl;
+import uk.protonull.civ.chesttracker.mixing.InventoryWindow;
 import uk.protonull.civ.chesttracker.mixins.MemoryAccessor;
 
 public final class Shortcuts {
@@ -46,6 +49,12 @@ public final class Shortcuts {
             screen.width,
             screen.height
         );
+    }
+
+    public static @NotNull LocalPlayer getPlayerFromInventoryWindow(
+        final @NotNull AbstractContainerScreen<?> screen
+    ) {
+        return ((InventoryWindow) screen).civchesttracker$getPlayer();
     }
 
     public static @NotNull BlockPos asBlockPos(

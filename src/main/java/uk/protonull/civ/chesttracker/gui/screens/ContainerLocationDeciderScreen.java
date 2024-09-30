@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.debug.DebugRenderer;
 import net.minecraft.core.BlockPos;
@@ -31,7 +32,7 @@ public class ContainerLocationDeciderScreen extends Screen {
     private static final int MIN_DISTANCE = 1;
     private static final int MAX_DISTANCE = 5;
 
-    private final Screen parent;
+    private final AbstractContainerScreen<?> parent;
     private final Consumer<BlockPos> setInventoryLocation;
     private final Vec3 playerEyePosition;
     private final Vec3 playerLookDirection;
@@ -39,15 +40,17 @@ public class ContainerLocationDeciderScreen extends Screen {
     private int distance = 1;
 
     public ContainerLocationDeciderScreen(
-        final @NotNull Screen parent,
-        final @NotNull Consumer<@NotNull BlockPos> setInventoryLocation,
-        final @NotNull LocalPlayer player
+        final @NotNull AbstractContainerScreen<?> parent,
+        final @NotNull Consumer<@NotNull BlockPos> setInventoryLocation
     ) {
         super(Component.empty());
         this.parent = Objects.requireNonNull(parent);
         this.setInventoryLocation = Objects.requireNonNull(setInventoryLocation);
-        this.playerEyePosition = player.getEyePosition();
-        this.playerLookDirection = player.getLookAngle().normalize();
+        {
+            final LocalPlayer player = Shortcuts.getPlayerFromInventoryWindow(parent);
+            this.playerEyePosition = player.getEyePosition();
+            this.playerLookDirection = player.getLookAngle().normalize();
+        }
         calculateNewDeciderLocation();
     }
 

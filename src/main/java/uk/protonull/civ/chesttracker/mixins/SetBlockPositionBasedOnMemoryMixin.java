@@ -2,7 +2,6 @@ package uk.protonull.civ.chesttracker.mixins;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import java.util.Optional;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -40,10 +39,7 @@ public abstract class SetBlockPositionBasedOnMemoryMixin {
         if (serverStorage == null) {
             return Optional.empty();
         }
-        final LocalPlayer player = Minecraft.getInstance().player;
-        if (player == null) {
-            return Optional.empty();
-        }
+        final LocalPlayer player = Shortcuts.getPlayerFromInventoryWindow(context.getScreen());
         final MemoryKeyImpl dimensionStorage = Shortcuts.getStorageForDimension(
             serverStorage,
             player.clientLevel.dimension().location()
