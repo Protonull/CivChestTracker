@@ -42,6 +42,10 @@ dependencies {
     // Make sure the branch is the correct Minecraft version!
     compileOnly("red.jackf.jackfredlib:jackfredlib:0.10.2+1.21.1")
 
+    // Find the version set at "where-is-it_version" at: https://github.com/JackFred2/ChestTracker/blob/1.21.1/gradle.properties
+    // Make sure the branch is the correct Minecraft version!
+    modCompileOnly("red.jackf:whereisit:2.6.3+1.21.1")
+
     // https://modrinth.com/mod/modmenu/version/11.0.2
     modLocalRuntime("maven.modrinth:modmenu:3ib3Uvvv")
 

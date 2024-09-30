@@ -8,8 +8,9 @@
         "cruft.DoNotRegisterHypixelProviderMixin",
 
         "illegal.DoNotListenForBlockBreaksMixin",
-        "illegal.DoNotRegisterBlockBreakListenerMixin",
-        "illegal.DoNotRegisterBlockPlaceListenerMixin",
+        "illegal.NukeAfterPlayerDestroyBlockMixin",
+        "illegal.NukeAfterPlayerPlaceBlockMixin",
+        "illegal.NukeConnectedBlocksGrabberMixin",
         "illegal.NukeInteractionTrackerImplMixin",
 
         "InventoryContextButtonsMixin",
