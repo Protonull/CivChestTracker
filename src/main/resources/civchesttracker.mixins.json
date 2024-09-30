@@ -5,6 +5,8 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
+        "cruft.DoNotRegisterHypixelProviderMixin",
+
         "illegal.DoNotListenForBlockBreaksMixin",
         "illegal.DoNotRegisterBlockBreakListenerMixin",
         "illegal.DoNotRegisterBlockPlaceListenerMixin",
