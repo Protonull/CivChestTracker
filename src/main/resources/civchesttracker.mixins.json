@@ -10,7 +10,7 @@
         "illegal.DoNotListenForBlockBreaksMixin",
         "illegal.DoNotRegisterBlockBreakListenerMixin",
         "illegal.DoNotRegisterBlockPlaceListenerMixin",
-        "illegal.DoNotRegisterUseBlockListenerMixin",
+        "illegal.NukeInteractionTrackerImplMixin",
 
         "InventoryContextButtonsMixin",
         "MemoryAccessor",
