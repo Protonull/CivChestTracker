@@ -17,6 +17,7 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import uk.protonull.civ.chesttracker.gui.widgets.TextRenderable;
+import uk.protonull.civ.chesttracker.mixing.InventoryWindow;
 import uk.protonull.civ.chesttracker.utilities.Shortcuts;
 
 public class ContainerLocationDeciderScreen extends Screen {
@@ -43,11 +44,11 @@ public class ContainerLocationDeciderScreen extends Screen {
         final @NotNull AbstractContainerScreen<?> parent,
         final @NotNull Consumer<@NotNull BlockPos> setInventoryLocation
     ) {
-        super(Component.empty());
+        super(Component.translatable("civchesttracker.picker.header"));
         this.parent = Objects.requireNonNull(parent);
         this.setInventoryLocation = Objects.requireNonNull(setInventoryLocation);
         {
-            final LocalPlayer player = Shortcuts.getPlayerFromInventoryWindow(parent);
+            final LocalPlayer player = InventoryWindow.getPlayer(parent);
             this.playerEyePosition = player.getEyePosition();
             this.playerLookDirection = player.getLookAngle().normalize();
         }
@@ -60,7 +61,7 @@ public class ContainerLocationDeciderScreen extends Screen {
             this.font,
             this.width / 2,
             20,
-            Component.literal("Where is this inventory?"),
+            Component.translatable("civchesttracker.picker.header"),
             PICKER_COLOUR_RBG
         ));
 
@@ -69,7 +70,7 @@ public class ContainerLocationDeciderScreen extends Screen {
             this.height - 40 - Button.DEFAULT_HEIGHT,
             Button.DEFAULT_WIDTH,
             Button.DEFAULT_HEIGHT,
-            Component.literal("Confirm"),
+            Component.translatable("civchesttracker.picker.confirm"),
             (button) -> {
                 final BlockPos blockPos = currentPickerLocation;
                 if (blockPos != null) {

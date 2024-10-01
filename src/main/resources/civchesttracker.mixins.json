@@ -5,7 +5,7 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-        "cruft.DoNotRegisterHypixelProviderMixin",
+        "cruft.DoNotRegisterDefaultChestTrackerPluginMixin",
 
         "illegal.DoNotListenForBlockBreaksMixin",
         "illegal.NukeAfterPlayerDestroyBlockMixin",
@@ -13,12 +13,10 @@
         "illegal.NukeConnectedBlocksGrabberMixin",
         "illegal.NukeInteractionTrackerImplMixin",
 
-        "retention.RetainPlayerOnInventoryWindowMixin",
-
         "InventoryContextButtonsMixin",
+        "InventoryWindowMixin",
         "MemoryAccessor",
-        "MemoryMixin",
-        "SetBlockPositionBasedOnMemoryMixin"
+        "MemoryMixin"
     ],
     "injectors": {
         "defaultRequire": 1
