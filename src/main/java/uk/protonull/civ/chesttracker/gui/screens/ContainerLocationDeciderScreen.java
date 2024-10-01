@@ -16,7 +16,6 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import uk.protonull.civ.chesttracker.gui.widgets.TextRenderable;
 import uk.protonull.civ.chesttracker.mixing.InventoryWindow;
 import uk.protonull.civ.chesttracker.utilities.Shortcuts;
 
@@ -57,14 +56,6 @@ public class ContainerLocationDeciderScreen extends Screen {
 
     @Override
     protected void init() {
-        addRenderableOnly(new TextRenderable.CentreAligned(
-            this.font,
-            this.width / 2,
-            20,
-            Component.translatable("civchesttracker.picker.header"),
-            PICKER_COLOUR_RBG
-        ));
-
         addRenderableWidget(new Button(
             (this.width / 2) - (Button.DEFAULT_WIDTH / 2),
             this.height - 40 - Button.DEFAULT_HEIGHT,
@@ -112,7 +103,25 @@ public class ContainerLocationDeciderScreen extends Screen {
         final int mouseY,
         final float partialTick
     ) {
-        // DO NOTHING
+        // Prevent the blurry background from being rendered as the player needs to be able to see the world.
+    }
+
+    @Override
+    public void render(
+        final @NotNull GuiGraphics guiGraphics,
+        final int mouseX,
+        final int mouseY,
+        final float partialTick
+    ) {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+
+        guiGraphics.drawCenteredString(
+            this.font,
+            Component.translatable("civchesttracker.picker.header"),
+            this.width / 2,
+            20,
+            PICKER_COLOUR_RBG
+        );
     }
 
     @Override
