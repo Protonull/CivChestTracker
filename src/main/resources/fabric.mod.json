@@ -9,7 +9,8 @@
     ],
     "contact": {
         "homepage": "${mod_home_url}",
-        "sources": "${mod_source_url}"
+        "sources": "${mod_source_url}",
+        "issues": "${mod_issues_url}"
     },
     "license": "${copyright_licence}",
     "icon": "assets/civchesttracker/icon.png",
@@ -23,9 +24,10 @@
         ]
     },
     "depends": {
+        "java": ">=21",
         "minecraft": "${minecraft_version}",
         "fabricloader": ">=${fabric_loader_version}",
-        "fabric": "*"
+        "fabric": ">=${fabric_api_version}"
     },
     "mixins": [
         "civchesttracker.mixins.json"

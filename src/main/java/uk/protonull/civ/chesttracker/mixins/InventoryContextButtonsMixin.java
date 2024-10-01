@@ -6,8 +6,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -27,9 +25,6 @@ import uk.protonull.civ.chesttracker.utilities.Shortcuts;
 
 @Mixin(InventoryButton.class)
 public abstract class InventoryContextButtonsMixin {
-    @Unique
-    private static final Logger LOGGER = LoggerFactory.getLogger(InventoryButton.class);
-
     @Shadow(remap = false)
     private boolean isDragging;
 

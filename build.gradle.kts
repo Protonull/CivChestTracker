@@ -117,6 +117,7 @@ tasks {
 
                 "minecraft_version" to project.extra["minecraft_version"],
                 "fabric_loader_version" to project.extra["fabric_loader_version"],
+                "fabric_api_version" to project.extra["fabric_api_version"]
             )
         }
     }

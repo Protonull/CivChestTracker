@@ -3,7 +3,6 @@ package uk.protonull.civ.chesttracker;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.components.CommonButtons;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.BeaconScreen;
 import net.minecraft.client.gui.screens.inventory.CartographyTableScreen;
@@ -67,8 +66,6 @@ public final class CivChestTrackerPlugin implements ChestTrackerPlugin {
         public boolean appliesTo(
             final @NotNull Coordinate coordinate
         ) {
-            CommonButtons lol;
-
             return true; // Apply to singleplayer, multiplayer, etc
         }
 
