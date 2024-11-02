@@ -10,9 +10,7 @@ than an approved exception, are automatically illegal and bannable. And since Ch
 location and type, it is thus illegal. The admins have ignored requests to grant ChestTracker (and similar mods) an
 exception. As such, the only way forward is to fork ChestTracker to make it legal.
 
-## Changes
-
-Nothing here yet.
+You NEED to have `/cti` enabled or otherwise CivChestTracker cannot function.
 
 ## Requirements
 

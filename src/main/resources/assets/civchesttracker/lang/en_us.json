@@ -1,8 +1,0 @@
-{
-    "civchesttracker.inventoryButton.blacklisted": "This inventory type is blacklisted!",
-    "civchesttracker.inventoryButton.nomemorybank": "There isn't a memory bank yet. Click to manage.",
-    "civchesttracker.inventoryButton.forgetcontainer": "Forget inventory?",
-    "civchesttracker.inventoryButton.trackcontainer": "Start tracking inventory?",
-    "civchesttracker.picker.header": "Where is this inventory?",
-    "civchesttracker.picker.confirm": "Confirm"
-}

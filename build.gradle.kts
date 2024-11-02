@@ -10,8 +10,6 @@ base {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/civchesttracker.accesswidener")
-
     runConfigs.configureEach {
         this.programArgs
             .addAll("--username LocalModTester".split(" "))

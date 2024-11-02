@@ -16,9 +16,6 @@
     "icon": "assets/civchesttracker/icon.png",
     "environment": "client",
     "entrypoints": {
-        "chesttracker": [
-            "uk.protonull.civ.chesttracker.CivChestTrackerPlugin"
-        ],
         "modmenu": [
             "red.jackf.chesttracker.impl.compat.mods.ChestTrackerModMenu"
         ]

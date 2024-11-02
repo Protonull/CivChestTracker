@@ -5,18 +5,13 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-        "cruft.DoNotRegisterDefaultChestTrackerPluginMixin",
-
         "illegal.DoNotListenForBlockBreaksMixin",
+        "illegal.DoNotListenForBlockInteractionsMixin",
         "illegal.NukeAfterPlayerDestroyBlockMixin",
         "illegal.NukeAfterPlayerPlaceBlockMixin",
         "illegal.NukeConnectedBlocksGrabberMixin",
-        "illegal.NukeInteractionTrackerImplMixin",
 
-        "InventoryContextButtonsMixin",
-        "InventoryWindowMixin",
-        "MemoryAccessor",
-        "MemoryMixin"
+        "InterceptCtiMixin"
     ],
     "injectors": {
         "defaultRequire": 1
