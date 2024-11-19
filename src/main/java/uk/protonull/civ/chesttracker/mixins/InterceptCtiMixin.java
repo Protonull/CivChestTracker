@@ -44,7 +44,7 @@ public abstract class InterceptCtiMixin {
         if (this.level == null) {
             return;
         }
-        final String plainMessage = packet.content().getString().replaceAll("§.", "");
+        final String plainMessage = getComponentPlainText(packet.content());
         if (!plainMessage.equals("Not reinforced") && !plainMessage.startsWith("Reinforced at ")) {
             return;
         }
@@ -87,11 +87,17 @@ public abstract class InterceptCtiMixin {
             if (hoverText == null || Component.EMPTY.equals(hoverText)) {
                 continue;
             }
-            final String hoverContent = hoverText.getString();
-            hovers.addAll(List.of(
-                hoverContent.split("\n")
-            ));
+            hovers.addAll(
+                List.of(getComponentPlainText(hoverText).split("\n"))
+            );
         }
         return hovers;
+    }
+
+    @Unique
+    private static @NotNull String getComponentPlainText(
+        final @NotNull Component component
+    ) {
+        return component.getString().replaceAll("§.", "").trim();
     }
 }
