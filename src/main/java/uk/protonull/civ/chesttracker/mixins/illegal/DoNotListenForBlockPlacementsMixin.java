@@ -7,7 +7,7 @@ import red.jackf.chesttracker.api.providers.context.BlockPlacedContext;
 import red.jackf.chesttracker.api.providers.defaults.DefaultProvider;
 
 @Mixin(DefaultProvider.class)
-public abstract class DoNotListenForBlockBreaksMixin {
+public abstract class DoNotListenForBlockPlacementsMixin {
     /**
      * @author Protonull
      * @reason Prevent ChestTracker from listening for block placements.
