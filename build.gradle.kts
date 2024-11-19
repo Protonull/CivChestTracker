@@ -31,25 +31,25 @@ dependencies {
 
     // https://maven.jackf.red/#/releases/red/jackf/chesttracker
     // Ctrl+F for your Minecraft version
-    "red.jackf:chesttracker:2.6.0+1.21.1".also {
+    "red.jackf:chesttracker:2.6.3+1.21.1".also {
         include(it)
         modImplementation(it)
     }
 
     // Find the version set at "jackfredlib_version" at: https://github.com/JackFred2/WhereIsIt/blob/1.21.1/gradle.properties
     // Make sure the branch is the correct Minecraft version!
-    compileOnly("red.jackf.jackfredlib:jackfredlib:0.10.2+1.21.1")
+    compileOnly("red.jackf.jackfredlib:jackfredlib:0.10.3+1.21.1")
 
     // Find the version set at "where-is-it_version" at: https://github.com/JackFred2/ChestTracker/blob/1.21.1/gradle.properties
     // Make sure the branch is the correct Minecraft version!
     modCompileOnly("red.jackf:whereisit:2.6.3+1.21.1")
 
-    // https://modrinth.com/mod/modmenu/version/11.0.2
-    modLocalRuntime("maven.modrinth:modmenu:3ib3Uvvv")
+    // https://modrinth.com/mod/modmenu/version/11.0.3
+    modLocalRuntime("maven.modrinth:modmenu:YIfqIJ8q")
 
     // This is literally only here to make Minecraft SHUT UP about non-signed messages while testing.
-    // https://modrinth.com/mod/no-chat-reports/version/Fabric-1.21-v2.8.0
-    modLocalRuntime("maven.modrinth:no-chat-reports:riMhCAII")
+    // https://modrinth.com/mod/no-chat-reports/version/Fabric-1.21.1-v2.9.1
+    modLocalRuntime("maven.modrinth:no-chat-reports:D8K0KJXM")
 }
 
 repositories {
